@@ -47,7 +47,7 @@ class Cooked_Post_Types {
 		global $wp_query, $post, $_cooked_settings;
 		$browse_page_id = $_cooked_settings['browse_page'];
 		
-		if ( $id == $browse_page_id && isset($wp_query->query['cp_recipe_category']) && taxonomy_exists('cp_recipe_category') && term_exists( $wp_query->query['cp_recipe_category'], 'cp_recipe_category' ) ):
+		if ( is_page($browse_page_id) && isset($wp_query->query['cp_recipe_category']) && taxonomy_exists('cp_recipe_category') && term_exists( $wp_query->query['cp_recipe_category'], 'cp_recipe_category' ) ):
 			$cooked_term = get_term_by( 'slug', $wp_query->query['cp_recipe_category'], 'cp_recipe_category' );
 			return $cooked_term->name;
 		endif;

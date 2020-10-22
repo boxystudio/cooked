@@ -2,8 +2,6 @@
 
 global $recipes,$recipe,$_cooked_settings,$recipe_args,$current_recipe_page,$atts,$list_id_counter;
 
-$atts['layout'] = ( !isset($atts['layout']) || isset($atts['layout']) && !$atts['layout'] ? $_cooked_settings['recipe_list_style'] : $atts['layout'] );
-
 $author_template_override = false;
 $is_author_page = ( !isset($atts['skip_heading']) && !empty($recipes) && isset($recipe_args['author_name']) && $recipe_args['author_name'] || !isset($atts['skip_heading']) && !empty($recipes) && isset($recipe_args['author']) && $recipe_args['author'] ? true : false );
 
